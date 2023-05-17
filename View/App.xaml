@@ -1,0 +1,9 @@
+﻿<Application x:Class="Practicheskaya_8.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Practicheskaya_8"
+             StartupUri="View\MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
