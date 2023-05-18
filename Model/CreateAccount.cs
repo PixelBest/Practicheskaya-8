@@ -10,7 +10,7 @@ namespace Practicheskaya_8.Model
 {
     internal class CreateDepositAccount : ICreateAccount<DepositAccount>
     {
-        public DepositAccount CreateAccount(int summa)
+        public DepositAccount CreateAccount(int summa)      //создание депозитного счёта
         {
             return new DepositAccount(summa);
         }
@@ -19,7 +19,7 @@ namespace Practicheskaya_8.Model
 
     internal class CreateNeDepositAccount : ICreateAccount<NeDepositAccount>
     {
-        public NeDepositAccount CreateAccount(int summa)
+        public NeDepositAccount CreateAccount(int summa)    //создание недепозитного счёта
         {
             return new NeDepositAccount(summa);
         }

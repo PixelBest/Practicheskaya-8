@@ -11,7 +11,7 @@ namespace Practicheskaya_8.Model
 {
     internal class AccountSendMoney : ISendMoney<BankAccount<int>>
     {
-        public void SendMoney(BankAccount<int> accountFrom, BankAccount<int> accountTo, int summa)
+        public void SendMoney(BankAccount<int> accountFrom, BankAccount<int> accountTo, int summa)      //перевод денег
         {
             accountFrom.Account -= summa;
             accountTo.Account += summa;

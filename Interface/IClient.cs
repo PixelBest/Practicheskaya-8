@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practicheskaya_8.Interface
 {
-    internal interface IClient
+    internal interface IClient      //интерфейс клиента
     {
         string Id { get; set; }
         string Name { get; set; }

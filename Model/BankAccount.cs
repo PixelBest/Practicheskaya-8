@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Practicheskaya_8.Model
 {
-    internal class BankAccount<T>
+    internal class BankAccount<T>       //основной класс счёта
     {
         private string id;
         private T account;
@@ -27,13 +27,13 @@ namespace Practicheskaya_8.Model
     }
 
 
-    internal class NeDepositAccount : BankAccount<int>
+    internal class NeDepositAccount : BankAccount<int>      //класс недопозитного счёта
     {
         public NeDepositAccount(int account) : base(account) { }
     }
 
 
-    internal class DepositAccount : BankAccount<int>
+    internal class DepositAccount : BankAccount<int>      //класс допозитного счёта
     {
         public DepositAccount(int account) : base(account) { }
     }

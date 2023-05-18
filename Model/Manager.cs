@@ -12,19 +12,19 @@ using System.Xml.Linq;
 
 namespace Practicheskaya_8.Model
 {
-    internal class Manager : Consultant, IManager
+    internal class Manager : Consultant, IManager     //класс менеджера
     {
         public delegate void Notice1(string message);
         public event Notice1 Notify1;
         public Manager(Bank bank) : base(bank) { }
 
-        public override string GetClientData(int index)
+        public override string GetClientData(int index)     //менеджер получает все данные
         {
             string data = $"Имя клиента {Bank.listClients[index].Name}, фамилия {Bank.listClients[index].Surname}, отчество {Bank.listClients[index].Otchestvo}, телефон {Bank.listClients[index].Phone}, серия номер паспорта {Bank.listClients[index].Pasport}";
             return data;
         }
 
-        public override void ChangePhone(int id, string newPhone)
+        public override void ChangePhone(int id, string newPhone)    //менеджер меняет телефон
         {
             Bank.listClients[id].Phone = newPhone;
             Bank.listClients[id].DateTimeChange = DateTime.Now.ToString();
@@ -33,7 +33,7 @@ namespace Practicheskaya_8.Model
             Bank.bankEntities.SaveChanges();
             Notify1.Invoke($"Менеджером изменён телефон у клинета с id {id + 1}");
         }
-        public void ChangeName(int index, string name)
+        public void ChangeName(int index, string name)    //менеджер меняет имя
         {
             Bank.listClients[index].Name = name;
             Bank.listClients[index].DateTimeChange = DateTime.Now.ToString();
@@ -42,7 +42,7 @@ namespace Practicheskaya_8.Model
             Bank.bankEntities.SaveChanges();
             Notify1.Invoke($"Менеджером изменено имя у клинета с id {index + 1}");
         }
-        public void ChangeSurname(int index, string surname)
+        public void ChangeSurname(int index, string surname)    //менеджер меняет фамилию
         {
             Bank.listClients[index].Surname = surname;
             Bank.listClients[index].DateTimeChange = DateTime.Now.ToString();
@@ -51,7 +51,7 @@ namespace Practicheskaya_8.Model
             Bank.bankEntities.SaveChanges();
             Notify1.Invoke($"Менеджером изменена фамилия у клинета с id {index + 1}");
         }
-        public void ChangeOtchestvo(int index, string otchestvo)
+        public void ChangeOtchestvo(int index, string otchestvo)    //менеджер меняет отчество
         {
             Bank.listClients[index].Otchestvo = otchestvo;
             Bank.listClients[index].DateTimeChange = DateTime.Now.ToString();
@@ -60,7 +60,7 @@ namespace Practicheskaya_8.Model
             Bank.bankEntities.SaveChanges();
             Notify1.Invoke($"Менеджером изменено отчество у клинета с id {index + 1}");
         }
-        public void ChangePasport(int index, string pasport)
+        public void ChangePasport(int index, string pasport)    //менеджер меняет паспорт
         {
             Bank.listClients[index].Pasport = pasport;
             Bank.listClients[index].DateTimeChange = DateTime.Now.ToString();
@@ -69,7 +69,7 @@ namespace Practicheskaya_8.Model
             Bank.bankEntities.SaveChanges();
             Notify1.Invoke($"Менеджером изменён паспорт у клинета с id {index + 1}");
         }
-        public void AddCLient(string name, string surname, string otchestvo, string phone, string pasport)
+        public void AddCLient(string name, string surname, string otchestvo, string phone, string pasport)    //менеджер добавляет клиента
         {
             Bank.listClients.Add(new DataBase.BankTable(name, surname, otchestvo, phone, pasport) { Id = (MainWindow.bankEntities.BankTable.Count() + 1).ToString()});
             Bank.bankEntities.BankTable.Add(new BankTable(name, surname, otchestvo, phone, pasport) { Id = (MainWindow.bankEntities.BankTable.Count() + 1).ToString() });

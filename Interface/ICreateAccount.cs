@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practicheskaya_8.Interface
 {
-    internal interface ICreateAccount<out T>
+    internal interface ICreateAccount<out T>        //интерфейс создания счёта
     {
         T CreateAccount(int summa);
     }

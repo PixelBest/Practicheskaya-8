@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Practicheskaya_8.Interface
 {
-    internal interface IConsultant
+    internal interface IConsultant      //интерфейс консультанта
     {
         Bank Bank { get; set; }
         string GetClientData(int index);

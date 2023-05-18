@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practicheskaya_8.Interface
 {
-    internal interface IManager
+    internal interface IManager         //интерфейс менеджера
     {
         string GetClientData(int index);
         void ChangePhone(int id, string newPhone);

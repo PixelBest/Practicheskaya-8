@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Practicheskaya_8.Model
 {
-    internal class Consultant : IConsultant
+    internal class Consultant : IConsultant     //класс консультанта
     {
         public delegate void Notice(string message);
         public event Notice Notify;
@@ -21,13 +21,13 @@ namespace Practicheskaya_8.Model
             Bank = bank;
         }
 
-        public virtual string GetClientData(int index)
+        public virtual string GetClientData(int index) //консултант получает все данные
         {
             string data = $"Имя клиента {Bank.listClients[index].Name}, фамилия {Bank.listClients[index].Surname}, отчество {Bank.listClients[index].Otchestvo}, телефон {Bank.listClients[index].Phone}, серия номер паспорта ******************";
             return data;
         }
 
-        public virtual void ChangePhone(int id, string newPhone)
+        public virtual void ChangePhone(int id, string newPhone)       //консультант меняет телефон
         {
             Bank.listClients[id].Phone = newPhone;
             Bank.listClients[id].DateTimeChange = DateTime.Now.ToString();

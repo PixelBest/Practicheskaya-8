@@ -15,7 +15,7 @@ namespace Practicheskaya_8.DataBase
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
-    public partial class AccountTable : INotifyPropertyChanged
+    public partial class AccountTable : INotifyPropertyChanged      //класс счёта клиента
     {
         private string id;
         private string deposit;
@@ -50,8 +50,8 @@ namespace Practicheskaya_8.DataBase
 
         public AccountTable() { }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropetryChanger([CallerMemberName] string prop = "")
+        public event PropertyChangedEventHandler PropertyChanged;       //событие динамического изменения свойств
+        public void OnPropetryChanger([CallerMemberName] string prop = "")          //метод динамического изменения свойств
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }

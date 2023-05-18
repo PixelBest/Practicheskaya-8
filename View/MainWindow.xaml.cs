@@ -35,7 +35,7 @@ namespace Practicheskaya_8.View
             InitializeComponent();
             LoadData();
         }
-        public void LoadData()
+        public void LoadData()      //загрузка всех данных
         {
             bank = new Bank("Сбербунк");
             consultant = new Consultant(bank);
@@ -48,28 +48,28 @@ namespace Practicheskaya_8.View
             Notify += Message;
         }
 
-        private void btnConsultantUpdatePhone(object sender, RoutedEventArgs e)
+        private void btnConsultantUpdatePhone(object sender, RoutedEventArgs e)       //консультант меняет телефон
             => consultant.ChangePhone(int.Parse(textBoxIdConsultantPhone.Text) - 1, textBoxNewConsultantPhone.Text);
 
-        private void btnManagerUpdatePhone(object sender, RoutedEventArgs e)
+        private void btnManagerUpdatePhone(object sender, RoutedEventArgs e)       //менеджер меняет телефон
         => manager.ChangePhone(int.Parse(textBoxIdManagerPhone.Text) - 1, textBoxNewManagerPhone.Text);
 
-        private void btnManagerUpdateName(object sender, RoutedEventArgs e)
+        private void btnManagerUpdateName(object sender, RoutedEventArgs e)       //менеджер меняет имя
         => manager.ChangeName(int.Parse(textBoxIdManagerName.Text) - 1, textBoxNewManagerName.Text);
 
-        private void btnManagerUpdateSurname(object sender, RoutedEventArgs e)
+        private void btnManagerUpdateSurname(object sender, RoutedEventArgs e)       //менеджер меняет фамилию
         => manager.ChangeSurname(int.Parse(textBoxIdManagerSurname.Text) - 1, textBoxNewManagerSurmane.Text);
 
-        private void btnManagerUpdateOtchestvo(object sender, RoutedEventArgs e)
+        private void btnManagerUpdateOtchestvo(object sender, RoutedEventArgs e)       //менеджер меняет отчество
         => manager.ChangeOtchestvo(int.Parse(textBoxIdManagerOtchestvo.Text) - 1, textBoxNewManagerOtchestvo.Text);
 
-        private void btnManagerUpdatePasport(object sender, RoutedEventArgs e)
+        private void btnManagerUpdatePasport(object sender, RoutedEventArgs e)       //менеджер меняет паспорт
         => manager.ChangePasport(int.Parse(textBoxIdManagerPasport.Text) - 1, textBoxNewManagerPasport.Text);
 
-        private void btnManagerAddClient(object sender, RoutedEventArgs e)
+        private void btnManagerAddClient(object sender, RoutedEventArgs e)       //менеджер добавляет клиента
         => manager.AddCLient(textBoxAddClientManagerName.Text, textBoxAddClientManagerSurname.Text, textBoxAddClientManagerOtchestvo.Text, textBoxAddClientManagerPhone.Text, textBoxAddClientManagerPasport.Text);
 
-        private void btnOpenAccount(object sender, RoutedEventArgs e)
+        private void btnOpenAccount(object sender, RoutedEventArgs e)       //создание счёта
         {
             if(checkBoxDepositOpenAccount.IsChecked == true)
             {
@@ -89,7 +89,7 @@ namespace Practicheskaya_8.View
             }
         }
 
-        private void btnAddMoney(object sender, RoutedEventArgs e)
+        private void btnAddMoney(object sender, RoutedEventArgs e)      //пополнение счёта
         {
             if (checkBoxDepositAddMoney.IsChecked == true)
             {
@@ -107,7 +107,7 @@ namespace Practicheskaya_8.View
             }
         }
 
-        private void btnCloseAccount(object sender, RoutedEventArgs e)
+        private void btnCloseAccount(object sender, RoutedEventArgs e)      //закрытие счёта
         {
             if (checkBoxDepositCloseAccount.IsChecked == true)
             {
@@ -123,7 +123,7 @@ namespace Practicheskaya_8.View
             }
         }
 
-        private void btnTransferMoney(object sender, RoutedEventArgs e)
+        private void btnTransferMoney(object sender, RoutedEventArgs e)       //перевод денег
         {
             if (checkBoxDepositTransferMoney.IsChecked == true)
             {
@@ -154,7 +154,7 @@ namespace Practicheskaya_8.View
             }
         }
 
-        public void Message(string message)
+        public void Message(string message)     //что будет происходить при событии     
         {
             MessageBox.Show(message, "Уведомлнеие");
         }

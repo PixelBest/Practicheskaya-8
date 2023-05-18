@@ -15,7 +15,7 @@ namespace Practicheskaya_8.DataBase
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
-    public partial class BankTable : IClient, INotifyPropertyChanged
+    public partial class BankTable : IClient, INotifyPropertyChanged    //класс клиента
     {
         private string id;
         private string name;
@@ -118,8 +118,8 @@ namespace Practicheskaya_8.DataBase
         }
         public BankTable() { }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropetryChanger([CallerMemberName] string prop = "")
+        public event PropertyChangedEventHandler PropertyChanged;       //событие динамического изменения свойств
+        public void OnPropetryChanger([CallerMemberName] string prop = "")      //метод динамического изменения свойств
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
